@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app">      
+<head>
+    <title>Simple To Do List using AngularJS</title>
+</head>
+<body>
+
+    <h1>Simple To Do List using AngularJS</h1>
+
+    <div ng-controller="ListController as list">
+
+
+        <form name="addToDoList" ng-submit="list.addItem();">
+            <p>
+                <input type="text" placeholder="Add item" ng-model="list.newTodo" />
+            </p>
+            <p>
+                <input type="submit"  value="Add" />
+            </p>
+        </form>
+
+        <ul>
+            <li ng-repeat="item in list.todoList" ng-show="item.title">
+                <p><input type="checkbox" ng-model="item.completed" ng-change="list.toggleState(item);" /><span ng-bind="item.title"></span><br />
+                </p>    
+            </li>
+
+        </ul>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ListController.js"></script> 
+</body>
+</html>
