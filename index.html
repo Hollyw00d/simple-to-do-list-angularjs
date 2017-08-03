@@ -2,13 +2,13 @@
 <html ng-app="app">      
 <head>
     <title>Simple To Do List using AngularJS</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
     <h1>Simple To Do List using AngularJS</h1>
 
     <div ng-controller="ListController as list">
-
 
         <form name="addToDoList" ng-submit="list.addItem();">
             <p>
@@ -19,9 +19,9 @@
             </p>
         </form>
 
-        <ul>
+        <ul id="list">
             <li ng-repeat="item in list.todoList" ng-show="item.title">
-                <p><input type="checkbox" ng-model="item.completed" ng-change="list.toggleState(item);" /><span ng-bind="item.title"></span><br />
+                <p><input type="checkbox" ng-model="item.completed" ng-change="list.toggleState(item);" /><span ng-bind="item.title" ng-class="{completed: item.completed}"></span><br />
                 </p>    
             </li>
 

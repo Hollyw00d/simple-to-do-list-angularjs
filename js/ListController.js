@@ -1,4 +1,4 @@
-function ListController($log) {
+function ListController($log, $document) {
     var self = this;
     self.newTodo = '';
 
@@ -15,15 +15,15 @@ function ListController($log) {
 
     self.toggleState = function(item) {
         if(self.todoList.completed) {
-            $log.log(self.todoList);
+            return 'crossedout';
         }
         else {
-            $log.log(self.todoList);
+            return 'normal';
         }
     }
 }
 
-ListController.$inject = ['$log'];
+ListController.$inject = ['$log', '$document'];
 
 
 angular
