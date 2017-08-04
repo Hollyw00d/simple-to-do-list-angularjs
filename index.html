@@ -21,7 +21,16 @@
 
         <ul id="list">
             <li ng-repeat="item in list.todoList" ng-show="item.title">
-                <p><input type="checkbox" ng-model="item.completed" ng-change="list.toggleState(item);" /><span ng-bind="item.title" ng-class="{completed: item.completed}"></span><br />
+                <p>
+                    <input type="checkbox" ng-model="item.completed" />
+                    <span 
+                    ng-bind="item.title" 
+                    ng-class="{completed: item.completed}"
+                    ng-click="showEditField = true;" ng-hide="showEditField"></span>
+                    <input 
+                    ng-show="showEditField"
+                    ng-model="item.title"
+                    ng-blur="showEditField = false; list.updateItem(item, $index);" />
                 </p>    
             </li>
 

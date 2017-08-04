@@ -13,14 +13,9 @@ function ListController($log, $document) {
         self.newTodo = '';
     };
 
-    self.toggleState = function(item) {
-        if(self.todoList.completed) {
-            return 'crossedout';
-        }
-        else {
-            return 'normal';
-        }
-    }
+    self.updateItem = function(item, index) {
+        self.todoList[index].title = item.title;
+    };
 }
 
 ListController.$inject = ['$log', '$document'];
