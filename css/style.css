@@ -6,7 +6,12 @@
 }
 
 
-/* General */
+/* List */
 ul#list li span.completed {
     text-decoration: line-through;
+}
+
+/* Item Counter and Delete Button */
+#item-counter-and-delete-button {
+    padding: 25px 0 0;
 }

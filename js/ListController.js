@@ -16,6 +16,17 @@ function ListController($log, $document) {
     self.updateItem = function(item, index) {
         self.todoList[index].title = item.title;
     };
+
+    self.getRemaining = function() {
+        return self.todoList.filter(function(item) {
+            return item.completed;
+        });
+    };
+
+    self.deleteCompletedItems = function() {
+        
+    };
+
 }
 
 ListController.$inject = ['$log', '$document'];
