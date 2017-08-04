@@ -48,7 +48,7 @@
                 </p>
 
                 <form name="deleteCompletedItems" ng-submit="list.deleteCompletedItems();">
-                    <input type="submit" value="Delete Completed Items" />
+                    <input ng-show="list.getRemaining().length > 0" type="submit" value="Delete Completed Items" />
                 </form>
             </div>
 
