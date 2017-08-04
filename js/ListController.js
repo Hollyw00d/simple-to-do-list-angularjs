@@ -24,7 +24,11 @@ function ListController($log, $document) {
     };
 
     self.deleteCompletedItems = function() {
-        
+        self.todoList = self.todoList.filter(function(item) {
+            return !item.completed;  
+        });
+
+        console.log(self.todoList);
     };
 
 }
