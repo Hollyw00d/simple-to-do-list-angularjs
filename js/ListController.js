@@ -27,8 +27,6 @@ function ListController($log, $document) {
         self.todoList = self.todoList.filter(function(item) {
             return !item.completed;  
         });
-
-        console.log(self.todoList);
     };
 
 }
