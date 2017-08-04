@@ -7,36 +7,40 @@
 </head>
 <body>
 
-    <h1>Simple To Do List using AngularJS</h1>
+    <div id="wrapper">
 
-    <div ng-controller="ListController as list">
+        <h1>Simple To Do List using AngularJS</h1>
 
-        <form name="addToDoList" ng-submit="list.addItem();">
-            <p>
-                <input type="text" placeholder="Add item" ng-model="list.newTodo" />
-            </p>
-            <p>
-                <input type="submit"  value="Add" />
-            </p>
-        </form>
+        <div ng-controller="ListController as list">
 
-        <ul id="list">
-            <li ng-repeat="item in list.todoList" ng-show="item.title">
+            <form name="addToDoList" ng-submit="list.addItem();">
                 <p>
-                    <input type="checkbox" ng-model="item.completed" />
-                    <span 
-                    ng-bind="item.title" 
-                    ng-class="{completed: item.completed}"
-                    ng-click="showEditField = true;" ng-hide="showEditField"></span>
-                    <input 
-                    ng-show="showEditField"
-                    ng-model="item.title"
-                    ng-blur="showEditField = false; list.updateItem(item, $index);" />
-                </p>    
-            </li>
+                    <input type="text" placeholder="Add item" ng-model="list.newTodo" />
+                </p>
+                <p>
+                    <input type="submit"  value="Add" />
+                </p>
+            </form>
 
-        </ul>
-    </div>
+            <ul id="list">
+                <li ng-repeat="item in list.todoList" ng-show="item.title">
+                    <p>
+                        <input type="checkbox" ng-model="item.completed" />
+                        <span 
+                        ng-bind="item.title" 
+                        ng-class="{completed: item.completed}"
+                        ng-click="showEditField = true;" ng-hide="showEditField"></span>
+                        <input 
+                        ng-show="showEditField"
+                        ng-model="item.title"
+                        ng-blur="showEditField = false; list.updateItem(item, $index);" />
+                    </p>    
+                </li>
+
+            </ul>
+        </div>
+
+    </div><!-- #wrapper END  -->
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
