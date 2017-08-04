@@ -5,7 +5,7 @@ function ListController($log, $document) {
     self.todoList = [];
 
     self.addItem = function() {
-        self.todoList.unshift({
+        self.todoList.push({
             title: self.newTodo,
             completed: false
         });
