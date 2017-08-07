@@ -34,6 +34,5 @@ function ListController($log, $document) {
 ListController.$inject = ['$log', '$document'];
 
 
-angular
-    .module('app')
+app
     .controller('ListController', ListController);
