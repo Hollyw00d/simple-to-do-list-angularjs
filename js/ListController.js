@@ -33,6 +33,7 @@ function ListController($log, $document) {
 
 ListController.$inject = ['$log', '$document'];
 
-
 app
     .controller('ListController', ListController);
+
+export * from 'ListController';
