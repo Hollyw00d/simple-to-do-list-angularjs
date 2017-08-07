@@ -1,3 +1,5 @@
+export * from './ListController';
+
 function ListController($log, $document) {
     var self = this;
     self.newTodo = '';
@@ -35,5 +37,3 @@ ListController.$inject = ['$log', '$document'];
 
 app
     .controller('ListController', ListController);
-
-export * from 'ListController';
