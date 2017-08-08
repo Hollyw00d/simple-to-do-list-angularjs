@@ -31,7 +31,11 @@ var ListController = function() {
 
 }
 
-var app = angular
-    .module('app');
+// var app = angular
+//     .module('app');
 
-module.exports = ListController;
+// CommonJS export
+// module.exports = ListController;
+
+// ES6 export
+export default ListController;
