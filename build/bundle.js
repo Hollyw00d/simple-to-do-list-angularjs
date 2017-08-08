@@ -112,10 +112,10 @@ var ListController = function() {
 
 }
 
-module.exports = ListController;
+var app = angular
+    .module('app');
 
-app
-    .controller('ListController', ListController);
+module.exports = ListController;
 
 /***/ })
 /******/ ]);
