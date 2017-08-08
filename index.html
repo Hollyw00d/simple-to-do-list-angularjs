@@ -21,7 +21,7 @@
                     <input name="todoItem" type="text" required ng-minlength="2" ng-maxlength="30" placeholder="Add item" ng-model="list.newTodo" />
                 </p>
                 <p ng-show="addToDoList.todoItem.$error.minlength">
-                    Your to do list item is required or too short.            
+                    Your to do list item is too short.            
                 </p>
                 <p ng-show="addToDoList.todoItem.$error.maxlength">
                     Your to do list item is too long.            
