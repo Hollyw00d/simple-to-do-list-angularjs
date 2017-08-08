@@ -1,4 +1,4 @@
-function ListController() {
+var ListController = function() {
     var self = this;
     self.newTodo = '';
 
@@ -30,6 +30,8 @@ function ListController() {
     };
 
 }
+
+module.exports = ListController;
 
 app
     .controller('ListController', ListController);
