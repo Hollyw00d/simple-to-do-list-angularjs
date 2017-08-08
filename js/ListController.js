@@ -31,8 +31,9 @@ var ListController = function() {
 
 }
 
+// Code below need to make CommonJS modules work
 // var app = angular
-//     .module('app');
+//      .module('app');
 
 // CommonJS export
 // module.exports = ListController;
