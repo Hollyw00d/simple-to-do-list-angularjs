@@ -88,32 +88,31 @@ app
 
 "use strict";
 var ListController = function() {
-    var self = this;
-    self.newTodo = '';
+    this.newTodo = '';
 
-    self.todoList = [];
+    this.todoList = [];
 
-    self.addItem = function() {
-        self.todoList.push({
-            title: self.newTodo,
+    this.addItem = function() {
+        this.todoList.push({
+            title: this.newTodo,
             completed: false
         });
 
-        self.newTodo = '';
+        this.newTodo = '';
     };
 
-    self.updateItem = function(item, index) {
-        self.todoList[index].title = item.title;
+    this.updateItem = function(item, index) {
+        this.todoList[index].title = item.title;
     };
 
-    self.getRemaining = function() {
-        return self.todoList.filter(function(item) {
+    this.getRemaining = function() {
+        return this.todoList.filter(function(item) {
             return item.completed;
         });
     };
 
-    self.deleteCompletedItems = function() {
-        self.todoList = self.todoList.filter(function(item) {
+    this.deleteCompletedItems = function() {
+        this.todoList = this.todoList.filter(function(item) {
             return !item.completed;  
         });
     };
