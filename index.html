@@ -14,47 +14,7 @@
 
         <h1>Simple To Do List using AngularJS</h1>
 
-        <div ng-controller="ListController as list">
-
-            <form name="addToDoList" ng-submit="list.addItem();">
-                <p>
-                    <input name="todoItem" type="text" required ng-minlength="2" ng-maxlength="30" placeholder="Add item" ng-model="list.newTodo" />
-                </p>
-                <p ng-show="addToDoList.todoItem.$error.maxlength">
-                    Your to do list item is too long.            
-                </p>
-                <p>
-                    <input type="submit" ng-disabled="addToDoList.$invalid"  value="Add" />
-                </p>
-            </form>
-
-            <ul id="list">
-                <li ng-repeat="item in list.todoList">
-                    <p>
-                        <input type="checkbox" ng-model="item.completed" />
-                        <span 
-                        ng-bind="item.title" 
-                        ng-class="{completed: item.completed}"
-                        ng-click="showEditField = true;" ng-hide="showEditField"></span>
-                        <input 
-                        ng-show="showEditField"
-                        ng-model="item.title"
-                        ng-blur="showEditField = false; list.updateItem(item, $index);" />
-                    </p>
-                </li>
-            </ul>
-
-            <div id="item-counter-and-delete-button" ng-show="list.todoList.length > 0">
-                <p>
-                    <em ng-cloak>You have {{ list.getRemaining().length }} of {{ list.todoList.length }} items completed on your to do list.</em>
-                </p>
-
-                <form name="deleteCompletedItems" ng-submit="list.deleteCompletedItems();">
-                    <input ng-show="list.getRemaining().length > 0" type="submit" value="Delete Completed Items" />
-                </form>
-            </div>
-
-        </div>
+        <todo></todo>
 
     </div><!-- #wrapper END  -->
     
