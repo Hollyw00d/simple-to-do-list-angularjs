@@ -1,27 +1,30 @@
             <form name="addToDoList" ng-submit="list.addItem();">
                 <p>
-                    <input name="todoItem" type="text" required ng-minlength="2" ng-maxlength="30" placeholder="Add item" ng-model="list.newTodo" />
+                    <input id="todo-item" name="todoItem" type="text" required ng-minlength="2" ng-maxlength="30" placeholder="Add item" ng-model="list.newTodo" />
                 </p>
                 <p ng-show="addToDoList.todoItem.$error.maxlength">
                     Your to do list item is too long.            
                 </p>
                 <p>
-                    <input type="submit" ng-disabled="addToDoList.$invalid"  value="Add" />
+                    <input type="submit" id="add" ng-disabled="addToDoList.$invalid"  value="Add" />
                 </p>
             </form>
 
             <ul id="list">
                 <li ng-repeat="item in list.todoList">
                     <p>
-                        <input type="checkbox" ng-model="item.completed" />
+                        <input class="list-check-off" type="checkbox" ng-model="item.completed" />
                         <span 
                         ng-bind="item.title" 
                         ng-class="{completed: item.completed}"
-                        ng-click="showEditField = true;" ng-hide="showEditField"></span>
+                        ng-click="showEditField = true;" 
+                        ng-hide="showEditField"
+                        class="read-item-title"></span>
                         <input 
                         ng-show="showEditField"
                         ng-model="item.title"
-                        ng-blur="showEditField = false; list.updateItem(item, $index);" />
+                        ng-blur="showEditField = false; list.updateItem(item, $index);"
+                        class="edit-item-title" />
                     </p>
                 </li>
             </ul>
@@ -32,6 +35,6 @@
                 </p>
 
                 <form name="deleteCompletedItems" ng-submit="list.deleteCompletedItems();">
-                    <input ng-show="list.getRemaining().length > 0" type="submit" value="Delete Completed Items" />
+                    <input id="delete-completed-items" ng-show="list.getRemaining().length > 0" type="submit" value="Delete Completed Items" />
                 </form>
             </div>
