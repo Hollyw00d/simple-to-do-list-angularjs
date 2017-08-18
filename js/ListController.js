@@ -1,4 +1,4 @@
-var ListController = function() {
+function ListController() {
     this.newTodo = '';
 
     this.todoList = [];
