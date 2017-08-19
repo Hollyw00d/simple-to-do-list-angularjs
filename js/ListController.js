@@ -1,16 +1,19 @@
-function ListController() {
+// ES6 import
+import addItemService from './addItemService';
+
+// Call angular service
+var app = angular.module('app', []);
+
+// Custom services
+app.service('addItemService', addItemService);
+
+// Controller
+function ListController(addItemService) {
     this.newTodo = '';
 
     this.todoList = [];
 
-    this.addItem = function() {
-        this.todoList.push({
-            title: this.newTodo,
-            completed: false
-        });
-
-        this.newTodo = '';
-    };
+    addItemService.addItem(this.todoList, this.newTodo);
 
     this.updateItem = function(item, index) {
         this.todoList[index].title = item.title;
@@ -29,6 +32,8 @@ function ListController() {
     };
 
 }
+
+
 
 // Code below need to make CommonJS modules work
 // var app = angular
