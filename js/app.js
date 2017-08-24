@@ -24,9 +24,7 @@ app
 
         this.newTodo = '';
     
-
-    
-        //addItemService.addItem(this.todoList, this.newTodo);
+        //this.addItem = addItemService.addItem;
 
         this.addItem = function() {
             this.todoList.push({

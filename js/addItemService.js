@@ -1,13 +1,20 @@
 function addItemService() {
-  this.addItem = function(myTodoList, myNewTodo) {
-    myTodoList.push({
-        title: this.myNewTodo,
+  // this.todolist = [];
+  // this.newTodo = '';
+
+  this.addItem = function() {
+    this.todolist.push({
+        title: this.newTodo,
         completed: false
     });
 
-    myNewTodo = '';
+    this.newTodo = '';
   };
 }
+
+//this.todoList = [];
+
+//this.newTodo = '';
 
 
 // this.addItem = function() {
